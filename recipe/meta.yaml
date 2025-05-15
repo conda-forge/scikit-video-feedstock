@@ -11,22 +11,25 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools <60.0
     - numpy
     - scipy
   run:
-    - python
-    - {{ pin_compatible('numpy') }}
+    - python >={{ python_min }}
+    - numpy
     - scipy
 
 test:
+  requires:
+    - pip
+    - python {{ python_min }}
   imports:
     - skvideo
     - skvideo.io
