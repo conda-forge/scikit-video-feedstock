@@ -18,7 +18,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools  # [py>=3.12]
+    - setuptools < 60.0  # [py<3.12]
     - numpy
     - scipy
   run:
