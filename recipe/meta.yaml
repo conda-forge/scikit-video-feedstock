@@ -19,6 +19,8 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
+    - numpy
+    - scipy
   run:
     - python >={{ python_min }}
     - numpy
