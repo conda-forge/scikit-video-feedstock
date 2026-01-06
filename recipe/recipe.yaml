@@ -22,7 +22,8 @@ requirements:
     - python ${{ python_min }}.*
     - pip
     - setuptools
-    - numpy
+    - numpy >=1.9.2
+    - scipy >=0.16.0
   run:
     - python >=${{ python_min }}
     - numpy >=1.9.2
