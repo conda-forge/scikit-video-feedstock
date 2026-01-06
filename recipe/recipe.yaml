@@ -21,13 +21,13 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools <60.0
-    - numpy
-    - scipy
+    - setuptools
   run:
     - python >=${{ python_min }}
-    - numpy
-    - scipy
+    - numpy >=1.9.2
+    - scipy >=0.16.0
+    - pillow >=3.1
+    - scikit-learn >=0.18
 
 tests:
   - python:
@@ -39,6 +39,7 @@ tests:
         - skvideo.datasets
         - skvideo.utils
       python_version: ${{ python_min }}.*
+
 about:
   license: BSD-3-Clause
   license_file: LICENSE.txt
